@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-grid{
+            display: grid;
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+        .grid-item{
+            background-color: #333333;
+            color: #fff;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-grid">
+        <div class="grid-item">
+            <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quos amet quasi illum ex ab
+                magni cum aut vel hic.</p>
+            <button type="button" id="down">Button</button>
+        </div><div class="grid-item">
+            <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quos amet quasi illum ex ab
+                magni cum aut vel hic.</p>
+            <button type="button" id="down">Button</button>
+        </div><div class="grid-item">
+            <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quos amet quasi illum ex ab
+                magni cum aut vel hic.</p>
+            <button type="button" id="down">Button</button>
+        </div><div class="grid-item">
+            <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quos amet quasi illum ex ab
+                magni cum aut vel hic.</p>
+            <button type="button" id="down">Button</button>
+        </div><div class="grid-item">
+            <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat quos amet quasi illum ex ab
+                magni cum aut vel hic.</p>
+            <button type="button" id="down">Button</button>
+        </div>
+    </div>
+
+    <script>
+        // Create element:
+        function download_txt() {
+            var textToSave = document.getElementById('txt').innerHTML;
+            var hiddenElement = document.createElement('a');
+
+            hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = 'myFile.txt';
+            hiddenElement.click();
+        }
+
+        document.getElementById('down').addEventListener('click', download_txt);
+    </script>
+    <!-- <script src="main.js"></script> -->
+</body>
+
+</html>
